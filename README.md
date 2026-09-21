@@ -90,6 +90,7 @@ Create a `.env` file and add your keys:
 ```env
 VITE_SUPABASE_URL=your-url
 VITE_SUPABASE_ANON_KEY=your-key
+SUPABASE_SERVICE_ROLE_KEY=your-key
 
 VITE_GEMINI_API_KEY=your-key
 
@@ -104,6 +105,7 @@ For Vercel (notifications function), add:
 FIREBASE_PROJECT_ID=your-project-id
 FIREBASE_CLIENT_EMAIL=your-email
 FIREBASE_PRIVATE_KEY=your-private-key
+VITE_FIREBASE_API_KEY=your-api-key
 ```
 
 ---

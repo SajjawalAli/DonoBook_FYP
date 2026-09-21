@@ -5,8 +5,8 @@ if (!getApps().length) {
     initializeApp({
         credential: cert({
             projectId: process.env.VITE_FIREBASE_PROJECT_ID,
-            clientEmail: process.env.VITE_FIREBASE_CLIENT_EMAIL,
-            privateKey: process.env.VITE_FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+            clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+            privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
         }),
     });
 }
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         }
 
         const supabaseUrl = process.env.VITE_MY_SUPABASE_URL;
-        const serviceRoleKey = process.env.VITE_MY_SUPABASE_SERVICE_ROLE_KEY;
+        const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
         const [receiverRes, senderRes] = await Promise.all([
             fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${receiver_id}&select=fcm_token`, {
