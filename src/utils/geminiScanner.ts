@@ -23,7 +23,7 @@ const SAFETY_SETTINGS = [
 
 export const scanBookImage = async (base64Image: string, mimeType: string): Promise<BookScanResult> => {
   const model = genAI.getGenerativeModel({
-    model: "gemini-2.5-flash-lite",
+    model: "gemini-3.5-flash-lite",
     safetySettings: SAFETY_SETTINGS,
   });
 
